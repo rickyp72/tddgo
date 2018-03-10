@@ -47,3 +47,14 @@ build:
         name: go test
         code: |
           go test ./...
+
+deploy:
+  steps:
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        tag: my-amazing-tag
+        cmd: my-amazing-command
+        ports: "5000"
+        repository: turing/bar
+        registry: https://registry.hub.docker.com

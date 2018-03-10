@@ -1,8 +1,10 @@
 package main
-func Sum(x float64, y float64) float64 {
-	return x + y
+import (
+"fmt"
+"net/http" )
+func handler(writer http.ResponseWriter, request *http.Request) { fmt.Fprintf(writer, "Hello World, %s!", request.URL.Path[1:])
 }
 func main() {
-	Sum(5.5, 5)
-
+	http.HandleFunc("/", handler)
+	http.ListenAndServe(":8080", nil)
 }

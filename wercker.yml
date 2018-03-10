@@ -52,8 +52,8 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        tag: v0.2
-        cmd: /usr/local/bin/tddgo
+        tag: v0.3
+        cmd: /usr/local/go/src/tddgo
         ports: "8080"
         repository: rickyparkinson/tddgo
         registry: https://registry.hub.docker.com/v2

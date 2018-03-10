@@ -53,8 +53,8 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        tag: my-amazing-tag
-        cmd: my-amazing-command
-        ports: "5000"
-        repository: turing/bar
+        tag: tddgo
+        cmd: tddgo
+        ports: "8080"
+        repository: rickyparkinson/tddgo
         registry: https://registry.hub.docker.com

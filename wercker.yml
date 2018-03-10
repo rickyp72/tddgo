@@ -56,4 +56,4 @@ deploy:
         cmd: tddgo
         ports: "8080"
         repository: rickyparkinson/tddgo
-        registry: https://registry.hub.docker.com
+        registry: https://registry111.hub.docker.com

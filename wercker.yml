@@ -28,7 +28,7 @@ box: golang
 build:
   steps:
     - wercker/setup-go-workspace:
-        package-dir: github.com/wercker/getting-started-golang
+        package-dir: /usr/local/go/src/
 
     # Gets the dependencies
     - script:
@@ -52,7 +52,7 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        tag: v0.1
+        tag: v0.2
         cmd: /usr/local/bin/tddgo
         ports: "8080"
         repository: rickyparkinson/tddgo

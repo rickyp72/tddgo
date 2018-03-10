@@ -28,7 +28,7 @@ box: golang
 build:
   steps:
     - wercker/setup-go-workspace:
-        package-dir: github.com/rickyparkinson/tddgo
+        package-dir: /Users/ricky/work/src/github.com/rickyp72/tddgo
 
     # Gets the dependencies
     - script:

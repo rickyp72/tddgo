@@ -49,7 +49,7 @@ build:
           go test ./...
 deploy:
   steps:
-    - internal/docker-push/:
+    - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
         tag: tddgo

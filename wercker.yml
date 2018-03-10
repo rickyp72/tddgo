@@ -40,7 +40,7 @@ build:
     - script:
         name: go build
         code: |
-          go build ./...
+          go install ./...
 
     # Test the project
     - script:

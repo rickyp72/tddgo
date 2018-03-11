@@ -60,7 +60,8 @@ build:
 deploy:
   steps:
     - script:
-      name: |
+      name: go build
+      code: |
         go get -v github.com/rickyp72/tddgo
         cd /go/src/github.com/rickyp72/tddgo
         go build main.go

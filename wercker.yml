@@ -38,7 +38,7 @@ build:
         name: go get
         code: |
           cd $WERCKER_SOURCE_DIR
-          go get
+          go get github.com/rickyp72/tddgo
           go version
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           echo $PATH
@@ -59,7 +59,7 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        tag: v0.4
+        tag: v0.5
         cmd: /usr/local/go/src/tddgo
         ports: "8080"
         repository: rickyparkinson/tddgo

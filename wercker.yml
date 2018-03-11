@@ -63,7 +63,7 @@ deploy:
         username: $USERNAME
         password: $PASSWORD
         tag: tddgo
-        cmd: tddgo
+        cmd: ls -ltr /go/src
         ports: "8080"
         repository: rickyparkinson/tddgo
         registry: https://registry.hub.docker.com/v2

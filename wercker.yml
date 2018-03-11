@@ -59,6 +59,11 @@ build:
           go test ./...
 deploy:
   steps:
+    - script:
+      name: |
+        go get
+        go install
+        
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD

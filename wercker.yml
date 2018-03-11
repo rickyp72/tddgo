@@ -40,7 +40,7 @@ build:
           cd $WERCKER_SOURCE_DIR
           go get -v github.com/rickyp72/tddgo
           go version
-          mkdir /go/rp
+          mkdir /go/src/rp
           ls -ltr /go/src
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           echo $PATH

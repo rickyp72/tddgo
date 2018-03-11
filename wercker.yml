@@ -63,7 +63,7 @@ deploy:
       name: |
         go get
         go install
-        
+        ls -ltr /go/src
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD

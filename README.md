@@ -9,3 +9,5 @@ This is a test go project using:
 
 :TODO build infrastructor in AWS with 'Terraform'
 :TODO deploy with wercker to AWS containers using ECS or kubernetes.
+
+:TODO build jenkins instance in AWS to build docker container and push to ECS.

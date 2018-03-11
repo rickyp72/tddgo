@@ -1,13 +1,13 @@
+---
 # This references the default golang container from
 # the Docker Hub: https://registry.hub.docker.com/u/library/golang/
 # If you want Google's container you would reference google/golang
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: golang
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
-
+box: golang
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
@@ -26,15 +26,21 @@ box: golang
     # at the right place in the workspace tree
 #    - setup-go-workspace
 build:
-  steps:
+    steps:
     - wercker/setup-go-workspace:
-        package-dir: /Users/ricky/work/src/github.com/rickyp72/tddgo
+        package-dir: github.com/rickyp72/tddgo
 
+    - script:
+       name: env
+       code: env
     # Gets the dependencies
     - script:
         name: go get
         code: |
-          go get
+          cd $WERCKER_SOURCE_DIR
+          go version
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          echo $PATH
 
     # Build the project
     - script:
@@ -49,15 +55,10 @@ build:
           go test ./...
 deploy:
   steps:
-    # Build the project
-    - script:
-        name: go build
-        code: |
-          go build ./...
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        tag: v0.3
+        tag: v0.4
         cmd: /usr/local/go/src/tddgo
         ports: "8080"
         repository: rickyparkinson/tddgo
